@@ -64,7 +64,9 @@ class Lista_SE {
       ptr = ptr->next();
     }
     auto copy = ptr->data();
-    prev->next(nullptr);
+    if (ptr != head_) {
+      prev->next(nullptr);
+    }
     delete ptr;
     return copy;
   }
