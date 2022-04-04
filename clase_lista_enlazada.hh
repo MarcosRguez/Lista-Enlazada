@@ -53,6 +53,21 @@ class Lista_SE {
     }
     return temp;
   }
+  T erase_last() {
+    if (this->Empty()) {
+      throw "🧨";
+    }
+    Nodo_SE<T>* ptr{head_};
+    Nodo_SE<T>* prev{head_};
+    while (ptr->next() != nullptr) {
+      prev = ptr;
+      ptr = ptr->next();
+    }
+    auto copy = ptr->data();
+    prev->next(nullptr);
+    delete ptr;
+    return copy;
+  }
   /// Friend
   /// Sobrecargas Operadores
   /// Sobrecargas Conversiones
