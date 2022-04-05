@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cassert>
+
 #include "clase_nodo.hh"
 
 /**
@@ -69,6 +71,13 @@ class Lista_SE {
     }
     delete ptr;
     return copy;
+  }
+  void Intercambiar() {
+    assert(!this->Empty());
+    assert(head().next() != nullptr);
+    Nodo_SE<T> copy = head();
+    this->EraseHead();
+    this->InsertAfter(head(), copy);
   }
   /// Friend
   /// Sobrecargas Operadores
