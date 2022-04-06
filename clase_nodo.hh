@@ -10,8 +10,8 @@ class Nodo_SE {
   /// Constructores
   Nodo_SE() : next_{nullptr}, data_{} {}  /// Constructor por defecto
   Nodo_SE(Nodo_SE<T>* const ptr, const T& data)
-      : next_{ptr}, data_{data} {}  /// Constructor estándar
-  // Nodo();  /// Constructor copia
+      : next_{ptr}, data_{data} {}                    /// Constructor estándar
+  Nodo_SE(const Nodo_SE<T>& copia) { this = copia; }  /// Constructor copia
   /// Destructores
   ~Nodo_SE() { next_ = nullptr; }
   /// Métodos
@@ -44,8 +44,8 @@ class Nodo_DE {
   /// Constructores
   Nodo_DE() : next_{nullptr}, data_{} {}  /// Constructor por defecto
   Nodo_DE(Nodo_DE<T>* const ptr, const T& data)
-      : next_{ptr}, data_{data} {}  /// Constructor estándar
-  // Nodo_p();  /// Constructor copia
+      : next_{ptr}, data_{data} {}                    /// Constructor estándar
+  Nodo_DE(const Nodo_DE<T>& copia) { this = copia; }  /// Constructor copia
   /// Destructores
   ~Nodo_DE() {
     next_ = nullptr;

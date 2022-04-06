@@ -129,7 +129,7 @@ class Lista_DE {
     prev->next(temp);
   }
   bool Empty() const {
-    if (head_ == nullptr) {
+    if (head_ == tail_) {
       return true;
     } else {
       return false;
