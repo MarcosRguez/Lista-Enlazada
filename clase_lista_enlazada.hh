@@ -103,10 +103,14 @@ class Lista_DE {
   Lista_DE(const T& data) {
     head_ = new Nodo_DE<T>;
     head_->data(data);
+    tail_ = *head_;
   }  /// Constructor estándar
   // ListaEnlazada();  /// Constructor copia
   /// Destructores
-  ~Lista_DE() { head_ = nullptr; }
+  ~Lista_DE() {
+    head_ = nullptr;
+    tail_ = nullptr;
+  }
   /// Métodos
   void InsertHead(const T& dato) { head_ = new Nodo_DE<T>{head_, dato}; }
   void EraseHead() {
@@ -147,9 +151,11 @@ class Lista_DE {
   /// Sobrecargas Conversiones
   /// Getters
   const Nodo_DE<T>& head() const { return *head_; }
+  const Nodo_DE<T>& tail() const { return *tail_; }
   /// Setters
  protected:
  private:
   /// Atributos
   Nodo_DE<T>* head_;
+  Nodo_DE<T>* tail_;
 };
