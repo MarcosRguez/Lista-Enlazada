@@ -12,7 +12,7 @@ template <typename T>
 class Lista_SE {
 	public:
 	/// Constructores
-	Lista_SE() : head_{ nullptr } {}  /// Constructor por defecto
+	Lista_SE() : head_{nullptr} {}  /// Constructor por defecto
 	Lista_SE(const T& data) {
 		head_ = new Nodo_SE<T>;
 		head_->data(data);
@@ -21,7 +21,7 @@ class Lista_SE {
 	/// Destructores
 	~Lista_SE() { head_ = nullptr; }
 	/// Métodos
-	void InsertHead(const T& dato) { head_ = new Nodo_SE<T>{ head_, dato }; }
+	void InsertHead(const T& dato) { head_ = new Nodo_SE<T>{head_, dato}; }
 	void EraseHead() {
 		Nodo_SE<T>* temp = head_->next();
 		delete head_;
@@ -59,8 +59,8 @@ class Lista_SE {
 		if (this->Empty()) {
 			throw "🧨";
 		}
-		Nodo_SE<T>* ptr{ head_ };
-		Nodo_SE<T>* prev{ head_ };
+		Nodo_SE<T>* ptr{head_};
+		Nodo_SE<T>* prev{head_};
 		while (ptr->next() != nullptr) {
 			prev = ptr;
 			ptr = ptr->next();
@@ -99,7 +99,7 @@ template <typename T>
 class Lista_DE {
 	public:
 	/// Constructores
-	Lista_DE() : head_{ nullptr } {}  /// Constructor por defecto
+	Lista_DE() : head_{nullptr} {}  /// Constructor por defecto
 	Lista_DE(const T& data) {
 		head_ = new Nodo_DE<T>;
 		head_->data(data);
@@ -112,7 +112,7 @@ class Lista_DE {
 		tail_ = nullptr;
 	}
 	/// Métodos
-	void InsertHead(const T& dato) { head_ = new Nodo_DE<T>{ head_, dato }; }
+	void InsertHead(const T& dato) { head_ = new Nodo_DE<T>{head_, dato}; }
 	void EraseHead() {
 		Nodo_DE<T>* temp = head_->next();
 		delete head_;
