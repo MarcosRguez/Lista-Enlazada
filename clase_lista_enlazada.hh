@@ -10,13 +10,14 @@
  */
 template <typename T>
 class Lista_SE {
-	public:
+ public:
 	/// Constructores
-	Lista_SE() : head_{nullptr} {}  /// Constructor por defecto
+	Lista_SE() :
+			head_{nullptr} {} /// Constructor por defecto
 	Lista_SE(const T& data) {
 		head_ = new Nodo_SE<T>;
 		head_->data(data);
-	}  /// Constructor estándar
+	} /// Constructor estándar
 	// ListaEnlazada();  /// Constructor copia
 	/// Destructores
 	~Lista_SE() { head_ = nullptr; }
@@ -85,8 +86,8 @@ class Lista_SE {
 	/// Getters
 	const Nodo_SE<T>& head() const { return *head_; }
 	/// Setters
-	protected:
-	private:
+ protected:
+ private:
 	/// Atributos
 	Nodo_SE<T>* head_;
 };
@@ -97,14 +98,15 @@ class Lista_SE {
  */
 template <typename T>
 class Lista_DE {
-	public:
+ public:
 	/// Constructores
-	Lista_DE() : head_{nullptr} {}  /// Constructor por defecto
+	Lista_DE() :
+			head_{nullptr} {} /// Constructor por defecto
 	Lista_DE(const T& data) {
 		head_ = new Nodo_DE<T>;
 		head_->data(data);
 		tail_ = *head_;
-	}	/// Constructor estándar
+	} /// Constructor estándar
 	// ListaEnlazada();  /// Constructor copia
 	/// Destructores
 	~Lista_DE() {
@@ -153,8 +155,8 @@ class Lista_DE {
 	const Nodo_DE<T>& head() const { return *head_; }
 	const Nodo_DE<T>& tail() const { return *tail_; }
 	/// Setters
-	protected:
-	private:
+ protected:
+ private:
 	/// Atributos
 	Nodo_DE<T>* head_;
 	Nodo_DE<T>* tail_;
